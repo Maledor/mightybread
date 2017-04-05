@@ -1,6 +1,11 @@
 var express = require('express');
 var server = express();
+var mongoose = require('mongoose');
+
 var port = process.env.PORT || 8080;
+var mongoURI = process.env.MONGOURI || require('./secrets').MONGOURI;
+
+mongoose.connect(mongoURI);
 
 server.use(express.static(__dirname + '/public'));
 
