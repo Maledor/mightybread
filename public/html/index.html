@@ -3,22 +3,47 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor/angular-popover.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular-route.js"></script>
     <title>Mighty Bread</title>
   </head>
   <body>
-
-
+    <nav ng-controller='NavbarController'>
+      <ul>
+        <li>
+          <a href="#!/aboutus">About Us</a>
+        </li>
+        <li>
+          <a href="#!/contactus">Contact Us</a>
+        </li>
+        <li>
+          <a href="#!/events">Events</a>
+        </li>
+        <li>
+          <a href="#!/programs">Programs</a>
+        </li>
+        <li>
+          <a href="#!/fooddrives">Food Drives</a>
+        </li>
+        <li>
+          <a href="#!/wishlist">Wish List</a>
+        </li>
+        <li>
+          <a href="#!/">Home</a>
+        </li>
+        <li>
+          <a href="#!/newsletter">Newsletter</a>
+        </li>
+      </ul>
+    </nav>
+    <ng-view></ng-view>
     <script src="js/app.js"></script>
     <script src="js/routes.js"></script>
-    <script src="js/controllers/home.controller.js"></script>
-    <script src="js/controllers/aboutus.controller.js"></script>
-    <script src="js/controllers/events.controller.js"></script>
-    <script src="js/controllers/programs.controller.js"></script>
-    <script src="js/controllers/fooddrives.controller.js"></script>
     <script src="js/controllers/contactus.controller.js"></script>
-    <script src="js/controllers/wishlist.controller.js"></script>
+    <script src="js/controllers/newsletter.controller.js"></script>
+    <script src="js/services/newsletter.service.js"></script>
     <script src="js/controllers/navbar.controller.js"></script>
+    <script src="js/vendor/angular-popover.js"></script>
   </body>
 </html>
