@@ -1,6 +1,7 @@
 var express = require('express');
 var server = express();
 var mongoose = require('mongoose');
+var mpromise = require('mpromise');
 var bodyParser = require('body-parser');
 
 var newsletterRouter = require('./routers/newsletter.router');

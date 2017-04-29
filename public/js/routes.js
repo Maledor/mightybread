@@ -7,10 +7,17 @@
   function RouterConfig($routeProvider){
     $routeProvider
     .when('/', {
+          controller: 'NewsletterController',
           templateUrl: 'html/views/home.html'
         })
         .when('/aboutus', {
           templateUrl: 'html/views/aboutus.html'
+        })
+        .when('/donate', {
+          templateUrl: 'html/views/donate.html'
+        })
+        .when('/getinvolved', {
+          templateUrl: 'html/views/getinvolved.html'
         })
         .when('/programs', {
           templateUrl: 'html/views/programs.html'
@@ -27,10 +34,6 @@
         })
         .when('/wishlist', {
           templateUrl: 'html/views/wishlist.html'
-        })
-        .when('/newsletter', {
-          controller: 'NewsletterController',
-          templateUrl: 'html/views/newsletter.html'
         })
           .otherwise({
             redirectTo: '/'

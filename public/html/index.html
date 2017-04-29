@@ -2,48 +2,126 @@
 <html ng-app='mightybread'>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/vendor/angular-popover.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="format-detection" content="telephone=no"/>
+  	<title>Bread of the Mighty Food Bank</title>
+  	<link rel="icon" href="../img/favicon.png" type="image/png" sizes="16x16">
+  	<link href='https://fonts.googleapis.com/css?family=Kameron:400,700' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="../css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular-route.js"></script>
-    <title>Mighty Bread</title>
   </head>
   <body>
-    <nav ng-controller='NavbarController'>
-      <ul>
-        <li>
-          <a href="#!/aboutus">About Us</a>
-        </li>
-        <li>
-          <a href="#!/contactus">Contact Us</a>
-        </li>
-        <li>
-          <a href="#!/events">Events</a>
-        </li>
-        <li>
-          <a href="#!/programs">Programs</a>
-        </li>
-        <li>
-          <a href="#!/fooddrives">Food Drives</a>
-        </li>
-        <li>
-          <a href="#!/wishlist">Wish List</a>
-        </li>
-        <li>
-          <a href="#!/">Home</a>
-        </li>
-        <li>
-          <a href="#!/newsletter">Newsletter</a>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <div class="header-wrapper">
+        <a href="#!/home.html" id="main-logo"><img src="../img/logo110.png" alt="Bread of the Mighty Food Bank"></a>
+        <div class="donate-button-div">
+          <a class="donate-button" href="#!/donate"><i class="fa fa-heart-o" aria-hidden="true"></i>DONATE</a>
+        </div>
+      </div>
+    </header>
+
+
+    	<nav>
+    	  <div class="topnav" id="myTopnav">
+    	    <a href="#!/aboutus">About Us</a>
+    	    <a href="#!/programs">Programs</a>
+    	    <a href="#!/events">Events</a>
+    	    <a href="#!/fooddrives">Food Drives</a>
+    	    <a href="#!/getinvolved.html">Get Involved</a>
+    	    <a href="#!/contactus">Contact Us</a>
+    	    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    	  </div>
+    	</nav>
+
+
     <ng-view></ng-view>
+
+
+        <footer>
+          <div class="footer-wrapper">
+            <div class="foot-col_1">
+              <img src="../img/hunger_license_plate.png" alt="Hunger License Plate" >
+              <p>The sale of each license plate provides 175 meals for those in need.<p>
+            </div>
+            <div class="foot-col_2">
+              <ul>
+                <li>325 NW 10th Avenue</li>
+                <li>Gainesville, FL 32601</li>
+                <li>(352) 336-0839</li>
+    						<li>M-F 8:00-4:00</li>
+              </ul>
+            </div>
+            <div class="foot-col_3">
+              <ul>
+    						<li><a href="#!/">Home</a></li>
+    						<li><a href="#!/aboutus">About Us</a></li>
+    						<li><a href="#!/programs">Programs</a></li>
+    						<li><a href="#!/contactus">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="foot-col_4">
+              <ul>
+    						<li><a href="donate.html">Donate</a></li>
+      					<li><a href="#!/wishlist">Wish List</a></li>
+                <li><a href="#!/getinvolved.html">Get Involved</a></li>
+      					<li><a href="privacy-policy">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+    			<div class="social">
+    	      <a href="https://www.facebook.com/breadofthemighty"><i class="fa fa-facebook pr25" aria-hidden="true"></i></a>
+    	      <a href="https://twitter.com/botmfoodbank"><i class="fa fa-twitter pr25" aria-hidden="true"></i></a>
+    	      <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    	    </div>
+          <div class="copyright-wrapper">
+            <p>&copy;2017 Bread of the Mighty Food Bank</p>
+          </div>
+        </footer>
+
+
     <script src="js/app.js"></script>
     <script src="js/routes.js"></script>
     <script src="js/controllers/contactus.controller.js"></script>
     <script src="js/controllers/newsletter.controller.js"></script>
     <script src="js/services/newsletter.service.js"></script>
-    <script src="js/controllers/navbar.controller.js"></script>
-    <script src="js/vendor/angular-popover.js"></script>
+
+
+
+    	<script>
+    	function myFunction() {
+    			var x = document.getElementById("myTopnav");
+    			if (x.className === "topnav") {
+    					x.className += " responsive";
+    			} else {
+    					x.className = "topnav";
+    			}
+    	}
+    	</script>
+
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdjHad2Sgo0WZDddh3BSRvHS91nR5Z9ys&callback=initMap">
+        </script>
+
+      <script>
+        function initMap() {
+        var uluru = {lat: 29.660956, lng: -82.328620};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+      </script>
+
+
+
+
   </body>
 </html>
